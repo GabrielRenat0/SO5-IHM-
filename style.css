@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #cddff1;
+    background-color: #209DC0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,19 +17,49 @@ body {
 .container {
     width: 100%;
     max-width: 414px;
-    background: #f6cacd(0 42% 0%);
+    background: #328096;
     display: grid;
     grid-template-rows: 60px auto 60px;
     gap: 16px;
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .header {
-    background: #c6b299;
+    background: #01B9EB;
     padding: 16px;
     border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-menu {
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.theme-menu button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.theme-menu button:hover {
+    background: #ddd;
 }
 
 .content {
@@ -56,16 +86,11 @@ body {
     border-radius: 8px;
 }
 
-
-
 .footer {
     background: #fbffcd;
     padding: 16px;
     border-radius: 8px;
 }
-
-
-
 
 .header, .content, .footer { text-align: center; }
 
@@ -74,4 +99,19 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 8px;
     height: 400px;
+}
+
+.svg_logo_inatel {
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+    fill: #002746; /* Cor da logo (pode ser alterada conforme o tema) */
+}
+
+.header {
+    background: #c6b299;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
