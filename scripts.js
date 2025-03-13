@@ -1,55 +1,68 @@
-document.getElementById('themeButton').addEventListener('click', function() {
-    const themeMenu = document.getElementById('themeMenu');
-    themeMenu.style.display = themeMenu.style.display === 'flex' ? 'none' : 'flex';
+function toggleMenu() {
+    document.querySelector("#sidebar").classList.toggle("open");
+}
+
+document.addEventListener("click", (event) => {
+    let sidebar = document.querySelector("#sidebar");
+    let menuIcon = document.querySelector(".menu-icon");
+
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+        sidebar.classList.remove("open");
+    }
 });
 
-function changeTheme(theme) {
-    const body = document.body;
-    const container = document.querySelector('.container');
-    const header = document.querySelector('.header');
-    const content = document.querySelector('.content');
-    const header2 = document.querySelector('.header2');
-    const content2 = document.querySelector('.content2');
-    const footer2 = document.querySelector('.footer2');
-    const footer = document.querySelector('.footer');
-    const svgLogo = document.querySelector('.svg_logo_inatel');
+function handleChangeTheme(theme) {
+    const themes = {
+        "TemaClaro": {
+            "--color-primary": "#0284c7",
+            "--color-secondary": "#64748b",
+            "--color-accent": "#51DEE0",
+            "--color-content": "#ffffff",
 
-    if (theme === 'default') {
-        body.style.backgroundColor = '#209DC0';
-        container.style.background = '#328096';
-        header.style.background = '#01B9EB';
-        content.style.background = '#000000';
-        header2.style.background = '#002746';
-        content2.style.background = '#1c5560';
-        footer2.style.background = '#79ae92';
-        footer.style.background = '#fbffcd';
-        svgLogo.style.fill = '#002746'; 
-    } else if (theme === 'dark') {
-        body.style.backgroundColor = '#1a1a1a';
-        container.style.background = '#333333';
-        header.style.background = '#444444';
-        content.style.background = '#555555';
-        header2.style.background = '#666666';
-        content2.style.background = '#777777';
-        footer2.style.background = '#888888';
-        footer.style.background = '#999999';
-        svgLogo.style.fill = '#ffffff';
-    } else if (theme === 'light') {
-        body.style.backgroundColor = '#f0f0f0';
-        container.style.background = '#ffffff';
-        header.style.background = '#e0e0e0';
-        content.style.background = '#d0d0d0';
-        header2.style.background = '#c0c0c0';
-        content2.style.background = '#b0b0b0';
-        footer2.style.background = '#a0a0a0';
-        footer.style.background = '#909090';
-        svgLogo.style.fill = '#002746';
+            "--color-base-1": "#ffffff",
+            "--color-base-2": "#e5e7eb",
+            "--color-base-3": "#202020",
+            "--color-base-content-1": "#181a2a",
+            "--color-base-content-2": "#181a2a",
+        },
+        "TemaEscuro": {
+            "--color-primary": "#1c4e80",
+            "--color-secondary": "#7c909a",
+            "--color-accent": "#ea6947",
+            "--color-content": "#ffffff",
+
+            "--color-base-1": "#202020",
+            "--color-base-2": "#23282e",
+            "--color-base-3": "#e5e7eb",
+            "--color-base-content-1": "#e5e7eb",
+            "--color-base-content-2": "#23282e",
+        },
+        "TemaAlternativo": {
+            "--color-primary": "#0d0d0d",
+            "--color-secondary": "#1a1919",
+            "--color-accent": "#1c4e80",
+            "--color-content": "#e1e1e1",
+
+            "--color-base-1": "#ffffff",
+            "--color-base-2": "#f5f5f5",
+            "--color-base-3": "#000000",
+            "--color-base-content-1": "#000000",
+            "--color-base-content-2": "#000000",
+        }
+    };
+
+    const themeToChange = themes[theme];
+
+    if (!themeToChange) return;
+
+    for (const [proprerty, color] of Object.entries(themeToChange)) {
+        document.documentElement.style.setProperty(proprerty, color);
     }
-    localStorage.setItem('theme', theme);
+
+    localStorage.setItem("theme", theme);
 }
-window.onload = function() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        changeTheme(savedTheme);
-    }
-};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "TemaClaro";
+    handleChangeTheme(savedTheme);
+});
