@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 
 :root {
     --color-primary: #0284c7;
     --color-secondary: #64748b;
     --color-content: #ffffff;
-    --color-accent: #51DEE0;
+    --color-accent: #51dee0;
 
     --color-base-1: #ffffff;
     --color-base-2: #e5e7eb;
@@ -133,41 +133,93 @@ main {
     cursor: pointer;
 }
 
-#news {
-    background-color: var(--color-secondary);
-    color: var(--color-content);
-    padding: 16px 12px;
-    margin: 0 16px;
-    border-radius: 8px;
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-default);
+    max-width: 800px;
+    align-self: center;
+    margin: 16px;
+}
+
+.carousel {
+    display: realtive;
+}
+
+.card {
+    min-width: 100%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.info {
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    flex-grow: 1;
+    gap: 12px;
+    margin: 16px 8px;
+    color: var(--color-base-content-2);
 }
 
-#news h4 {
-    font-size: 18px;
+.info p i {
+    color: var(--color-primary);
 }
 
-#news p {
-    font-size: 14px;
+#prevBtn,
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-secondary);
+    opacity: 0.9;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+    
 }
 
-footer {
-    margin: 16px 0 0;
-    width: 100vw;
-    text-align: center;
-    font-size: 14px;
-    padding: 16px;
-    background: var(--color-primary);
-    color: var(--color-content);
+#prevBtn {
+    left: 10px;
 }
 
-footer a {
-    color: var(--color-accent);
-    text-decoration: none;
+#nextBtn {
+    right: 10px;
 }
 
+@keyframes pulseLeft {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) translateX(-3px) scale(1); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+@keyframes pulseRight {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) translateX(3px) scale(1); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+#prevBtn:hover {
+    animation: pulseLeft 0.4s ease-in-out;
+}
+
+#nextBtn:hover {
+    animation: pulseRight 0.4s ease-in-out;
+}
 
 #sidebar {
     position: fixed;
