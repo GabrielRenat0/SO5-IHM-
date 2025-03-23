@@ -145,12 +145,13 @@ main {
 }
 
 .carousel {
-    display: realtive;
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
 }
 
 .card {
-    min-width: 100%;
-    text-align: center;
+    min-width: 100%; 
+    box-sizing: border-box;
 }
 
 .card img {
