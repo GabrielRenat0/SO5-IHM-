@@ -8,12 +8,13 @@
         />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>S05 - Atividade 05</title>
+        <title>S05 - Tarefa 05</title>
     </head>
     <body>
         <nav id="sidebar" class="sidebar" onclick="event.stopPropagation()">
             <i class="bi bi-x close-sidebar" onclick="toggleMenu()"></i>
             <h3>
+                <i class="bi bi-palette-fill"></i>
                 Selecione o tema:
             </h3>
 
@@ -47,7 +48,7 @@
 
         <main>
             <section id="messages">
-                <h2>Ola Gabriel</h2>
+                <h2>Olá Gabriel</h2>
                 <div>
                     <div><i class="bi bi-caret-right-fill"></i></div>
                     <p>
@@ -61,48 +62,19 @@
                 </div>
             </section>
 
-            <section id="classes">
-                <div class="class">
-                    <div>
-                        <h4>Disciplina</h4>
-                        <p>Sala e Horario</p>
-                    </div>
-                    <div>
-                        <div><i class="bi bi-clock"></i></div>
-                        <div><i class="bi bi-calendar-week"></i></div>
-                        <div><i class="bi bi-clipboard2-check"></i></div>
-                    </div>
-                </div>
-                <div class="class">
-                    <div>
-                        <h4>Disciplina</h4>
-                        <p>Sala e Horario</p>
-                    </div>
-                    <div>
-                        <div><i class="bi bi-clock"></i></div>
-                        <div><i class="bi bi-calendar-week"></i></div>
-                        <div><i class="bi bi-clipboard2-check"></i></div>
-                    </div>
-                </div>
-                <div class="class">
-                    <div>
-                        <h4>Disciplina</h4>
-                        <p>Sala e Horario</p>
-                    </div>
-                    <div>
-                        <div><i class="bi bi-clock"></i></div>
-                        <div><i class="bi bi-calendar-week"></i></div>
-                        <div><i class="bi bi-clipboard2-check"></i></div>
-                    </div>
-                </div>
-            </section>
+            <classes-component id="classes"></classes-component>
 
             <section id="news" class="carousel-container">
                 <div class="carousel"></div>
-                <button id="prevBtn"><i class="bi bi-chevron-left"></i></button>
-                <button id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+                <button id="prevBtn">
+                    <i class="bi bi-caret-left-fill"></i>
+                </button>
+                <button id="nextBtn">
+                    <i class="bi bi-caret-right-fill"></i>
+                </button>
             </section>
         </main>
         <script src="scripts.js"></script>
+        <script src="classes-component.js"></script>
     </body>
 </html>
