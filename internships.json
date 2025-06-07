@@ -1,0 +1,41 @@
+[
+    {
+      "id": 1,
+      "empresa": "Tech Solutions SA",
+      "cargo": "Estagiário em Desenvolvimento Web",
+      "local": "São Paulo/SP",
+      "modalidade": "Híbrido",
+      "descricao": "Estágio para desenvolvimento de aplicações web com React e Node.js",
+      "requisitos": "Conhecimento em JavaScript, HTML, CSS. Cursando Engenharia de Computação ou áreas afins.",
+      "salario": "R$ 1.800,00 + benefícios",
+      "data_publicacao": "10/05/2025",
+      "prazo_inscricao": "30/05/2025",
+      "link": "https://empresa.com/vagas/123"
+    },
+    {
+      "id": 2,
+      "empresa": "Inatel",
+      "cargo": "Estagiário em Pesquisa e Desenvolvimento",
+      "local": "Santa Rita do Sapucaí/MG",
+      "modalidade": "Presencial",
+      "descricao": "Participação em projetos de P&D em telecomunicações e IoT",
+      "requisitos": "Conhecimento básico em eletrônica e programação. Cursando Engenharia Elétrica, Telecom ou Computação.",
+      "salario": "R$ 1.500,00 + auxílio transporte",
+      "data_publicacao": "05/05/2025",
+      "prazo_inscricao": "25/05/2025",
+      "link": "https://inatel.br/vagas/456"
+    },
+    {
+      "id": 3,
+      "empresa": "Global Telecom",
+      "cargo": "Estagiário em Redes de Telecomunicações",
+      "local": "Remoto",
+      "modalidade": "Remoto",
+      "descricao": "Auxiliar na configuração e monitoramento de redes de telecomunicações",
+      "requisitos": "Conhecimento em redes de computadores. Cursando Engenharia de Telecomunicações ou áreas afins.",
+      "salario": "R$ 2.000,00 + benefícios",
+      "data_publicacao": "15/05/2025",
+      "prazo_inscricao": "05/06/2025",
+      "link": "https://globaltelecom.com/vagas/789"
+    }
+  ]
